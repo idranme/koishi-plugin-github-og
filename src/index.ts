@@ -22,15 +22,30 @@ async function digest(message: string) {
   return hashHex
 }
 
-function isValidHttpUrl(str:string) {
+function isValidHttpUrl(str: string) {
+  // forked from https://gist.github.com/dperini/729294
   const pattern = new RegExp(
-    '^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$', // fragment locator
-    'i'
+    "^" +
+      // protocol identifier (optional)
+      // short syntax // still required
+      "(?:(?:(?:https?):)?\\/\\/)" +
+      "(?:" +
+        // host & domain names, may end with dot
+        // can be replaced by a shortest alternative
+        // (?![-_])(?:[-\\w\\u00a1-\\uffff]{0,63}[^-_]\\.)+
+        "(?:" +
+          "(?:" +
+            "[a-z0-9\\u00a1-\\uffff]" +
+            "[a-z0-9\\u00a1-\\uffff_-]{0,62}" +
+          ")?" +
+          "[a-z0-9\\u00a1-\\uffff]\\." +
+        ")+" +
+        // TLD identifier name, may end with dot
+        "(?:[a-z\\u00a1-\\uffff]{2,}\\.?)" +
+      ")" +
+      // resource path (optional)
+      "(?:[/?#]\\S*)?" +
+    "$", "i"
   )
   return pattern.test(str)
 }
