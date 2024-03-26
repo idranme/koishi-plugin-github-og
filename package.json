@@ -1,0 +1,40 @@
+{
+  "name": "koishi-plugin-github-og",
+  "description": "Detect GitHub projects and generate preview images",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "github",
+    "gh",
+    "opengraph",
+    "og"
+  ],
+  "peerDependencies": {
+    "koishi": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idanran/koishi-plugin-github-og.git"
+  },
+  "author": {
+    "email": "idanran@outlook.com",
+    "name": "idanran",
+    "url": "https://github.com/idanran"
+  },
+  "koishi": {
+    "description": {
+      "zh": "检测 GitHub 项目并生成预览图",
+      "en": "Detect GitHub projects and generate preview images"
+    },
+    "browser": true
+  }
+}
