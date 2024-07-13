@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-github-og",
   "description": "Detect GitHub projects and generate preview images",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -19,16 +19,11 @@
     "og"
   ],
   "peerDependencies": {
-    "koishi": "^4.16.4"
+    "koishi": "^4.17.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/idanran/koishi-plugin-github-og.git"
-  },
-  "author": {
-    "email": "idanran@outlook.com",
-    "name": "idanran",
-    "url": "https://github.com/idanran"
+    "url": "https://github.com/idranme/koishi-plugin-github-og.git"
   },
   "koishi": {
     "description": {
